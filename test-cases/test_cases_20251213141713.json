@@ -1,0 +1,39 @@
+{
+  "test_suite": "Login API",
+  "base_url": "https://example.com",
+  "endpoint": "/api/login",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "payload": {
+    "username": "test_user",
+    "password": "Test@123"
+  },
+  "expected_status_code": 200,
+  "expected_message": "Login successful",
+  "tests": [
+    {
+      "name": "test_login_with_valid_credentials",
+      "description": "Test Login API with valid credentials.",
+      "assertions": [
+        {
+          "type": "status_code",
+          "expected": 200
+        },
+        {
+          "type": "response_body_contains",
+          "key": "message"
+        },
+        {
+          "type": "response_body_contains",
+          "key": "token"
+        },
+        {
+          "type": "response_body_value",
+          "key": "message",
+          "expected": "Login successful"
+        }
+      ]
+    }
+  ]
+}
