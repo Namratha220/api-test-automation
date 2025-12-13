@@ -1,0 +1,58 @@
+{
+  "TestCaseID": "API_TC_001",
+  "Title": "Verify user login API with valid credentials",
+  "Description": "Ensure login API returns success for valid username and password",
+  "BaseURL": "http://your-api-domain.com",
+  "Endpoint": "/api/login",
+  "Headers": {
+    "Content-Type": "application/json"
+  },
+  "Payload": {
+    "username": "valid_user",
+    "password": "valid_password"
+  },
+  "ExpectedResponse": {
+    "statusCode": 200,
+    "body": {
+      "message": "Login successful",
+      "token": "<jwt_token>"
+    }
+  },
+  "TestSteps": [
+    {
+      "StepDescription": "Construct the full URL by appending the endpoint to the base URL",
+      "Action": "Concatenate BaseURL and Endpoint",
+      "ExpectedOutcome": "Full URL is correctly formed"
+    },
+    {
+      "StepDescription": "Send a POST request to the API with headers and payload",
+      "Action": "POST request to the constructed URL with Headers and Payload",
+      "ExpectedOutcome": "Receive a response from the API"
+    },
+    {
+      "StepDescription": "Validate the response status code",
+      "Action": "Compare the response status code with the expected status code",
+      "ExpectedOutcome": "Response status code matches the expected status code"
+    },
+    {
+      "StepDescription": "Validate the response body contains the 'message' key",
+      "Action": "Check if the 'message' key exists in the response JSON",
+      "ExpectedOutcome": "'message' key is present in the response JSON"
+    },
+    {
+      "StepDescription": "Validate the 'message' value in the response body",
+      "Action": "Compare the 'message' value in the response JSON with the expected message",
+      "ExpectedOutcome": "'message' value matches the expected message"
+    },
+    {
+      "StepDescription": "Validate the response body contains the 'token' key",
+      "Action": "Check if the 'token' key exists in the response JSON",
+      "ExpectedOutcome": "'token' key is present in the response JSON"
+    },
+    {
+      "StepDescription": "Validate the 'token' value in the response body",
+      "Action": "Check if the 'token' value is not empty",
+      "ExpectedOutcome": "'token' value is not empty"
+    }
+  ]
+}
