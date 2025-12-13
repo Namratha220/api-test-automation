@@ -1,0 +1,28 @@
+{
+  "test_cases": [
+    {
+      "class_name": "TestLoginAPI",
+      "base_url": "https://api.example.com",
+      "test_cases": [
+        {
+          "test_name": "test_login_with_valid_credentials",
+          "description": "Verify Login API with valid credentials",
+          "endpoint": "/api/login",
+          "method": "POST",
+          "headers": {
+            "Content-Type": "application/json"
+          },
+          "payload": {
+            "username": "test_user",
+            "password": "Test@123"
+          },
+          "expected_status_code": 200,
+          "expected_response": {
+            "message": "Login successful",
+            "token": "non_empty"
+          }
+        }
+      ]
+    }
+  ]
+}
