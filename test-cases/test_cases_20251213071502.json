@@ -1,0 +1,57 @@
+{
+  "test_cases": [
+    {
+      "test_case_id": "TC001",
+      "description": "Verify successful login with valid credentials",
+      "input": {
+        "endpoint": "/api/login",
+        "method": "POST",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "username": "validUser",
+          "password": "validPassword"
+        }
+      },
+      "expected_output": {
+        "status_code": 200,
+        "response_body": {
+          "message": "Login successful",
+          "token": "string"
+        }
+      },
+      "metadata": {
+        "priority": "High",
+        "author": "AutomationTeam",
+        "last_updated": "2023-10-05"
+      }
+    },
+    {
+      "test_case_id": "TC002",
+      "description": "Verify login failure with invalid credentials",
+      "input": {
+        "endpoint": "/api/login",
+        "method": "POST",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "username": "invalidUser",
+          "password": "invalidPassword"
+        }
+      },
+      "expected_output": {
+        "status_code": 401,
+        "response_body": {
+          "message": "Invalid username or password"
+        }
+      },
+      "metadata": {
+        "priority": "Medium",
+        "author": "AutomationTeam",
+        "last_updated": "2023-10-05"
+      }
+    }
+  ]
+}
