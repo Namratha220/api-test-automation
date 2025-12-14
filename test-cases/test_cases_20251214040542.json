@@ -1,0 +1,25 @@
+{
+  "test_case": {
+    "name": "Test Login API with Valid Credentials",
+    "description": "Validates the login functionality of the API using valid credentials.",
+    "api_details": {
+      "base_url": "https://example.com/api",
+      "endpoint": "/login",
+      "method": "POST",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "payload": {
+        "username": "test_user",
+        "password": "secure_password"
+      }
+    },
+    "expected_results": {
+      "status_code": 200,
+      "response_body": {
+        "message": "Login successful",
+        "token": "<string>"
+      }
+    }
+  }
+}
