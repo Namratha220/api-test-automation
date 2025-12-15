@@ -1,0 +1,23 @@
+{
+  "test_cases": [
+    {
+      "test_case_id": "TC001",
+      "test_case_name": "Test Login with Valid Credentials",
+      "description": "Validate the Login API with valid username and password.",
+      "endpoint": "/api/login",
+      "method": "POST",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "request_body": {
+        "username": "valid_user",
+        "password": "valid_password"
+      },
+      "expected_status_code": 200,
+      "expected_response": {
+        "message": "Login successful",
+        "token": "<string>"
+      }
+    }
+  ]
+}
