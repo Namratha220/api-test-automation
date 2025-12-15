@@ -1,0 +1,21 @@
+{
+  "test_case": {
+    "name": "TestLoginAPI",
+    "description": "Test case for verifying the Login API with valid credentials.",
+    "base_url": "http://example.com",
+    "endpoint": "/api/login",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "request_body": {
+      "username": "test_user",
+      "password": "Test@123"
+    },
+    "expected_status_code": 200,
+    "expected_response_keys": [
+      "message",
+      "token"
+    ],
+    "expected_message": "Login successful"
+  }
+}
