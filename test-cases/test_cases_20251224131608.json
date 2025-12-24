@@ -1,0 +1,41 @@
+[
+  {
+    "test_case_id": "API_TC_001",
+    "title": "Verify Login API with valid credentials",
+    "description": "Ensure login API returns success when valid username and password are provided.",
+    "endpoint": "/api/login",
+    "method": "POST",
+    "base_url": "https://api.example.com",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "request_body": {
+      "username": "valid_user",
+      "password": "valid_password"
+    },
+    "expected_status_code": 200,
+    "expected_response": {
+      "message": "Login successful",
+      "token": "string"
+    },
+    "assertions": [
+      {
+        "type": "status_code",
+        "expected": 200,
+        "message": "Expected status code 200"
+      },
+      {
+        "type": "response_key",
+        "key": "message",
+        "expected": "Login successful",
+        "message": "Expected message 'Login successful'"
+      },
+      {
+        "type": "response_key",
+        "key": "token",
+        "expected_type": "string",
+        "message": "Token should be a string"
+      }
+    ]
+  }
+]
