@@ -1,0 +1,20 @@
+{
+  "Test Cases": [
+    {
+      "Test Case ID": "API_LOGIN_001",
+      "Title": "Verify Login API with valid credentials",
+      "Description": "Ensure login is successful when valid username and password are provided.",
+      "Input Parameters": {
+        "username": "valid_user",
+        "password": "valid_password"
+      },
+      "Expected Results": {
+        "status_code": 200,
+        "response_body": {
+          "token": "non-empty string",
+          "userId": "integer greater than 0"
+        }
+      }
+    }
+  ]
+}
