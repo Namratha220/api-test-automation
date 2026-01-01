@@ -1,0 +1,22 @@
+{
+  "TestCases": [
+    {
+      "TestCaseID": "TC001",
+      "Description": "Test login API with valid credentials",
+      "Endpoint": "/api/login",
+      "Method": "POST",
+      "Headers": {
+        "Content-Type": "application/json"
+      },
+      "Payload": {
+        "username": "valid_user",
+        "password": "Valid@123"
+      },
+      "ExpectedStatusCode": 200,
+      "ExpectedResponse": {
+        "token": "not null",
+        "message": "Login successful"
+      }
+    }
+  ]
+}
