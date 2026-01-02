@@ -1,0 +1,71 @@
+{
+  "test_cases": [
+    {
+      "test_case_name": "test_login_success",
+      "description": "Validates successful login with correct credentials.",
+      "steps": [
+        {
+          "step_number": 1,
+          "action": "Send POST request to /login endpoint with valid username and password.",
+          "expected_result": "API responds with status code 200 and a valid authentication token."
+        }
+      ],
+      "expected_results": {
+        "status_code": 200,
+        "response_body": {
+          "token": "string",
+          "expires_in": "integer"
+        }
+      },
+      "metadata": {
+        "priority": "High",
+        "type": "Positive",
+        "last_updated": "2023-10-05"
+      }
+    },
+    {
+      "test_case_name": "test_login_failure_invalid_credentials",
+      "description": "Validates login failure with incorrect credentials.",
+      "steps": [
+        {
+          "step_number": 1,
+          "action": "Send POST request to /login endpoint with invalid username and password.",
+          "expected_result": "API responds with status code 401 and an error message."
+        }
+      ],
+      "expected_results": {
+        "status_code": 401,
+        "response_body": {
+          "error": "Invalid credentials"
+        }
+      },
+      "metadata": {
+        "priority": "Medium",
+        "type": "Negative",
+        "last_updated": "2023-10-05"
+      }
+    },
+    {
+      "test_case_name": "test_login_failure_missing_fields",
+      "description": "Validates login failure when required fields are missing.",
+      "steps": [
+        {
+          "step_number": 1,
+          "action": "Send POST request to /login endpoint with missing username or password.",
+          "expected_result": "API responds with status code 400 and an error message."
+        }
+      ],
+      "expected_results": {
+        "status_code": 400,
+        "response_body": {
+          "error": "Missing required fields"
+        }
+      },
+      "metadata": {
+        "priority": "Medium",
+        "type": "Negative",
+        "last_updated": "2023-10-05"
+      }
+    }
+  ]
+}
