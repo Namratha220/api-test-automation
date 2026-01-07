@@ -1,0 +1,43 @@
+{
+  "test_cases": [
+    {
+      "test_name": "test_get_user_success",
+      "description": "Verify that the API successfully retrieves a user by ID.",
+      "input": {
+        "user_id": 1
+      },
+      "expected_output": {
+        "status_code": 200,
+        "response_body": {
+          "id": 1,
+          "name": "John Doe",
+          "email": "john.doe@example.com",
+          "isActive": true,
+          "roles": [
+            "admin",
+            "editor"
+          ],
+          "profile": {
+            "age": 30,
+            "gender": "male",
+            "location": "New York"
+          },
+          "createdAt": "2026-01-07T10:00:00Z"
+        }
+      }
+    },
+    {
+      "test_name": "test_get_user_not_found",
+      "description": "Verify that the API returns a 404 status code and error message when a user is not found.",
+      "input": {
+        "user_id": 9999
+      },
+      "expected_output": {
+        "status_code": 404,
+        "response_body": {
+          "error": "User not found"
+        }
+      }
+    }
+  ]
+}
