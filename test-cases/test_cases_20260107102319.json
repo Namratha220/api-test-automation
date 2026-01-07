@@ -1,0 +1,45 @@
+{
+  "test_cases": [
+    {
+      "test_case_id": "test_get_user_success",
+      "description": "Verify GET /users/{id} returns correct user details",
+      "method": "GET",
+      "endpoint": "/users/{id}",
+      "headers": {
+        "Authorization": "Bearer <valid_token>",
+        "Content-Type": "application/json"
+      },
+      "expected_status_code": 200,
+      "expected_response": {
+        "id": 123,
+        "name": "John Doe",
+        "email": "john.doe@example.com"
+      }
+    },
+    {
+      "test_case_id": "test_post_user_creation",
+      "description": "Verify POST /users creates a new user",
+      "method": "POST",
+      "endpoint": "/users",
+      "headers": {
+        "Authorization": "Bearer <valid_token>",
+        "Content-Type": "application/json"
+      },
+      "payload": {
+        "name": "Jane Doe",
+        "email": "jane.doe@example.com",
+        "password": "securepassword"
+      },
+      "expected_status_code": 201,
+      "expected_response_keys": [
+        "id",
+        "name",
+        "email"
+      ],
+      "expected_response_values": {
+        "name": "Jane Doe",
+        "email": "jane.doe@example.com"
+      }
+    }
+  ]
+}
